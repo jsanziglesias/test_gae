@@ -16,9 +16,9 @@ import org.joda.time.DateTime;
 public class BookBean {
 
     @Id
-    private Long id;
+    private String id;
 
-	@Index 
+	@Index
 	private String name;
 	
 	@Index 
@@ -36,11 +36,11 @@ public class BookBean {
         this.name = name;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 	
@@ -65,6 +65,15 @@ public class BookBean {
 	}
 	
 	public void setGenre(String genre){
+		this.genre = genre;
+	}
+	public BookBean(){
+	}
+	public BookBean(String id, String author, String name, DateTime releaseDate, String genre){
+		this.id = id;
+		this.author = author;
+		this.name = name;
+		this.releaseDate = releaseDate;
 		this.genre = genre;
 	}
 }

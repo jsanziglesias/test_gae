@@ -15,7 +15,7 @@
         <local.port>8080</local.port>
 
         <!-- Common configuration -->
-        <appengine.target.version>1.9.26</appengine.target.version>
+        <appengine.target.version>1.9.70</appengine.target.version>
         <appengine.pipeline.version>[0.2.7,0.2.9]</appengine.pipeline.version>
         <appengine.app.version>1</appengine.app.version>
         <swagger.rest.package>com.test.rest</swagger.rest.package>
@@ -29,8 +29,8 @@
         <mockito.version>1.9.0</mockito.version>
 
         <!-- Compiler configuration -->
-        <java.source>1.7</java.source>
-        <java.target>1.7</java.target>
+        <java.source>1.8</java.source>
+        <java.target>1.8</java.target>
 
         <!-- Plugins versions -->
         <maven.minimum.version>3.1.0</maven.minimum.version>
@@ -77,7 +77,7 @@
                                     <locations>${swagger.rest.package}</locations>
                                     <apiVersion>v1</apiVersion>
                                     <basePath>
-                                        http://localhost:${local.port}/${swagger.rest.uri}
+                                       https://test-gae-225714.appspot.com/${swagger.rest.uri}
                                     </basePath>
                                     <outputTemplate>markdown.mustache</outputTemplate>
                                     <outputPath>
@@ -87,7 +87,7 @@
                                         ${project.build.directory}/${project.artifactId}-${project.version}/swaggerDoc/apidocs
                                     </swaggerDirectory>
                                     <swaggerUIDocBasePath>
-                                        http://localhost:${local.port}/swaggerDoc/apidocs
+                                        https://test-gae-225714.appspot.com/swaggerDoc/apidocs
                                     </swaggerUIDocBasePath>
                                 </apiSource>
                             </apiSources>

@@ -3,6 +3,7 @@
 
     <application>test-gae-225714</application>
     <version>1</version>
+	<runtime>java8</runtime>
 
     <!-- Allows App Engine to send multiple requests to one instance in parallel -->
     <threadsafe>true</threadsafe>

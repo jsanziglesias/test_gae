@@ -23,12 +23,6 @@ public class BookResource {
     public BookResource() {
         this.bookBeanDAO = new BookBeanDAO();
     }
-
-//    @GET
-//    @ApiOperation("list books")
-//    public Response list() {
-//        return Response.ok(this.bookBeanDAO.list()).build();
-//    }
 	
 	@GET
     @ApiOperation("list books by query")
@@ -40,7 +34,7 @@ public class BookResource {
     @GET
     @Path("/{id}")
     @ApiOperation("get books by id")
-    public Response get(@PathParam("id") Long id) {
+    public Response get(@PathParam("id") String id) {
         BookBean bean = this.bookBeanDAO.get(id);
         if (bean == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
@@ -59,12 +53,8 @@ public class BookResource {
     @DELETE
     @Path("/{id}")
     @ApiOperation("delete book")
-    public Response delete(@PathParam("id") Long id) {
-        BookBean bean = this.bookBeanDAO.get(id);
-        if (bean == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-        this.bookBeanDAO.delete(bean);
+    public Response delete(@PathParam("id") String id) {
+        this.bookBeanDAO.delete(id);
         return Response.ok().build();
     }
 }
